@@ -1,17 +1,21 @@
 <template>
   <div class="tabbuttons">
-    <div class="ghButton active" v-on:click="loadComponent(0)">
-      <i class="fas fa-book-open"></i><span>Overview</span>
+    <div class="ghButton" :class="{ active: currentIndex == 0  }" @click="loadComponent(0)">
+      <i class="fas fa-book-open"></i>
+      <span>Overview</span>
     </div>
-    <div class="ghButton" v-on:click="loadComponent(1)">
-      <i class="fas fa-bookmark"></i><span>Repositories</span
-      ><span class="badge badge-pill badge-light">7</span>
+    <div class="ghButton"  :class="{ active: currentIndex ==1  }"  @click="loadComponent(1)">
+      <i class="fas fa-bookmark"></i>
+      <span>Repositories</span>
+      <span class="badge badge-pill badge-light">7</span>
     </div>
-    <div class="ghButton" v-on:click="loadComponent(2)">
-      <i class="fas fa-book-tasks"></i> <span>Projects</span>
+    <div class="ghButton" :class="{ active: currentIndex == 2  }"  @click="loadComponent(2)">
+      <i class="fas fa-book-tasks"></i>
+      <span>Projects</span>
     </div>
-    <div class="ghButton" v-on:click="loadComponent(3)">
-      <i class="fas fa-box"></i><span>Packages</span>
+    <div class="ghButton"  :class="{ active: currentIndex == 3 }"  @click="loadComponent(3)">
+      <i class="fas fa-box"></i>
+      <span>Packages</span>
     </div>
   </div>
 </template>
@@ -20,8 +24,17 @@
 <script>
 export default {
   name: "TabButtons",
-
-  methods: {},
+  data() {
+    return {
+      currentIndex: 0
+    };
+  },
+  methods: {
+    loadComponent(index) {
+      this.currentIndex = index;
+      this.$emit("switch-View", index);
+    }
+  }
 };
 </script>
 

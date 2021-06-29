@@ -1,6 +1,8 @@
 <template>
-  <div :key="r.id" v-for="r in repos" class="col col-lg-6">
-    <Repo :repo="r" @check-repo="onDelete(r.id)" />
+  <div>
+    <div :key="r.id" v-for="r in repos" class="col col-lg-12">
+      <Repo :repo="r" @check-repo="onDelete(r.id)" />
+    </div>
   </div>
 </template>
 
