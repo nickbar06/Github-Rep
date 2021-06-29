@@ -46,32 +46,32 @@ export default {
     projectSubmit(e) {
       e.preventDefault();
 
-      if(!this.project) {
-        alert('Please add a task')
+      if (!this.project) {
+        alert("Please add a task");
         return;
       }
 
       const newProject = {
-        id: Math.floor(Math.random() *1000),
+        // id: Math.floor(Math.random() *1000),
         text: this.project,
         description: this.description,
-        language: this.language
-      }
+        language: this.language,
+      };
 
       console.log(newProject);
 
-      this.$emit('add-proj', newProject);
+      this.$emit("add-proj", newProject);
 
       this.project = "";
       this.description = "";
       this.language = "";
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style scoped>
-label{
-  float:left
+label {
+  float: left;
 }
 </style>

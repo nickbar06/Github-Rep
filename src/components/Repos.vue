@@ -22,7 +22,6 @@ export default {
       this.$emit("check-repo", id);
     },
   },
-  data() {},
 };
 </script>
 

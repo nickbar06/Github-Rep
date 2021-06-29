@@ -1,13 +1,11 @@
 <template>
-  <div class="card" style="width: 18rem">
+  <div class="card" style="width: 100%">
     <img :src="picture" class="avatar" />
     <div class="card-body">
       <h5>{{ firstName }} {{ lastName }}</h5>
       <p>@{{ username }}</p>
       <p class="card-text">Full stack developer from Miami.</p>
-      <button v-on:click="getUser()" class="btn btn-primary">
-        Edit Profile
-      </button>
+      <button @click="getUser()" class="btn btn-primary">Edit Profile</button>
     </div>
   </div>
 </template>
@@ -72,9 +70,9 @@ a {
 
 .avatar {
   border-radius: 50%;
-  width: 230px;
+  width: 80%;
   margin: 0 auto;
-  padding-top: 20px;
+  margin-top: 20px;
 }
 
 .card {
