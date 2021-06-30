@@ -1,7 +1,7 @@
 <template >
   <div>
     <p class="title">Popular Repositories</p>
-    <Repos :repos="repos" @check-repo="checkRepo" />
+    <Repos :repos="repos" @check-repo="deleteRepo" />
   </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
     };
   },
   methods: {
-    async checkRepo(id) {
+    async deleteRepo(id) {
       if (confirm("Are you sure you wanna delete?")) {
         const res = await fetch(`api/repos/${id}`, {
           method: "DELETE",

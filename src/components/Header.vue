@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <h4>Apple Interview</h4>
+    <h4>Github Clone</h4>
   </div>
 </template>
 

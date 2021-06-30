@@ -52,7 +52,6 @@ export default {
       }
 
       const newProject = {
-        // id: Math.floor(Math.random() *1000),
         text: this.project,
         description: this.description,
         language: this.language,

@@ -1,18 +1,18 @@
 <template>
   <div class="tabbuttons">
-    <div class="ghButton" :class="{ active: currentIndex == 0 }">
-      <router-link class="link" to="/" @click="loadComponent(0)">
+    <router-link class="link" to="/" @click="loadComponent(0)">
+      <div class="ghButton" :class="{ active: currentIndex == 0 }">
         <i class="fas fa-book-open"></i>
         Overview
-      </router-link>
-    </div>
-    <div class="ghButton" :class="{ active: currentIndex == 1 }">
-      <router-link class="link" to="/repositories" @click="loadComponent(1)">
+      </div>
+    </router-link>
+    <router-link class="link" to="/repositories" @click="loadComponent(1)">
+      <div class="ghButton" :class="{ active: currentIndex == 1 }">
         <i class="fas fa-bookmark"></i>
         Repositories
         <span class="badge badge-pill badge-light">7</span>
-      </router-link>
-    </div>
+      </div>
+    </router-link>
     <div
       class="ghButton"
       :class="{ active: currentIndex == 2 }"
@@ -44,7 +44,6 @@ export default {
   methods: {
     loadComponent(index) {
       this.currentIndex = index;
-      // this.$emit("switch-View", index);
     },
   },
 };
